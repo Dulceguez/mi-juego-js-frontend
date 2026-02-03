@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Preguntas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="fondoVisual"></div>
+
+  <h1>Juego de Preguntas y Respuestas</h1>
+
+  <div id="selectorColor" class="pantalla-color">
+    <div class="modal-color">
+      <h2>Elegí tu color de ficha:</h2>
+      <div class="botones-color">
+        <button class="color-btn" data-color="red" style="background-color: red;"></button>
+        <button class="color-btn" data-color="blue" style="background-color: blue;"></button>
+        <button class="color-btn" data-color="green" style="background-color: green;"></button>
+        <button class="color-btn" data-color="yellow" style="background-color: yellow;"></button>
+      </div>
+    </div>
+  </div>
+  <div id="juegoContainer">
+    <div id="dadoContainer">
+      <img id="dadoImg" src="./img/dado1.png" alt="Dado" width="100" height="100" />
+      <button id="tirarDado">🎲 Tirar dado</button>
+    </div>
+    <div id="tableroCompleto">
+      <div id="casillaInicio" class="casillaEspecial">Largada</div>
+      <div id="tablero"></div>
+      <div id="casillaFin" class="casillaEspecial">Fin</div>
+    </div>
+    <div id="preguntaContainer" class="pregunta-container"></div>
+  </div>
+  
+  <script src="./script.js"></script>
+
+</body>
+</html>

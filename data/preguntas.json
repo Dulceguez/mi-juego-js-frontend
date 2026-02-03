@@ -1,0 +1,363 @@
+[
+  {
+    "id": 1,
+    "texto": "¿Cuál es la capital de Argentina?",
+    "respuestas": [
+      { "texto": "Buenos Aires", "correcta": true },
+      { "texto": "Córdoba", "correcta": false },
+      { "texto": "Rosario", "correcta": false }
+    ]
+  },
+  {
+    "id": 2,
+    "texto": "¿Qué animal hace 'muuu'?",
+    "respuestas": [
+      { "texto": "Vaca", "correcta": true },
+      { "texto": "Perro", "correcta": false },
+      { "texto": "Gato", "correcta": false }
+    ]
+  },
+
+   {
+    "id": 3,
+    "texto": "¿Cuál es el río más largo del mundo?",
+    "respuestas": [
+      { "texto": "Amazonas", "correcta": true },
+      { "texto": "Nilo", "correcta": false },
+      { "texto": "Misisipi", "correcta": false }
+    ]
+  },
+  {
+    "id": 4,
+    "texto": "¿Cuántos jugadores tiene un equipo de fútbol en cancha?",
+    "respuestas": [
+      { "texto": "11", "correcta": true },
+      { "texto": "10", "correcta": false },
+      { "texto": "12", "correcta": false }
+    ]
+  },
+  {
+    "id": 5,
+    "texto": "¿Qué planeta es conocido como el planeta rojo?",
+    "respuestas": [
+      { "texto": "Marte", "correcta": true },
+      { "texto": "Júpiter", "correcta": false },
+      { "texto": "Saturno", "correcta": false }
+    ]
+  },
+  {
+    "id": 6,
+    "texto": "¿Quién escribió 'Cien años de soledad'?",
+    "respuestas": [
+      { "texto": "Gabriel García Márquez", "correcta": true },
+      { "texto": "Julio Cortázar", "correcta": false },
+      { "texto": "Mario Vargas Llosa", "correcta": false }
+    ]
+  },
+  {
+    "id": 7,
+    "texto": "¿Cuál es el elemento químico con el símbolo 'O'?",
+    "respuestas": [
+      { "texto": "Oxígeno", "correcta": true },
+      { "texto": "Oro", "correcta": false },
+      { "texto": "Osmio", "correcta": false }
+    ]
+  },
+  {
+    "id": 8,
+    "texto": "¿En qué continente se encuentra Egipto?",
+    "respuestas": [
+      { "texto": "África", "correcta": true },
+      { "texto": "Asia", "correcta": false },
+      { "texto": "Europa", "correcta": false }
+    ]
+  },
+  {
+    "id": 9,
+    "texto": "¿Qué instrumento tiene teclas blancas y negras?",
+    "respuestas": [
+      { "texto": "Piano", "correcta": true },
+      { "texto": "Violín", "correcta": false },
+      { "texto": "Trompeta", "correcta": false }
+    ]
+  },
+  {
+    "id": 10,
+    "texto": "¿Qué día se celebra el Día de la Independencia en Argentina?",
+    "respuestas": [
+      { "texto": "9 de julio", "correcta": true },
+      { "texto": "25 de mayo", "correcta": false },
+      { "texto": "20 de junio", "correcta": false }
+    ]
+  },
+  {
+    "id": 11,
+    "texto": "¿Quién es el autor de la frase \"Pienso, luego existo\"?",
+    "respuestas": [
+    {"texto": "Aristóteles", "correcta": false },
+    {"texto": "René Descartes", "correcta": true },
+    {"texto": "Friedrich Nietzsche", "correcta": false } 
+    ]
+  },
+  {
+    "id": 12,
+    "texto": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "respuestas": [
+    { "texto": "1939", "correcta": true },
+    { "texto": "1914", "correcta": false },
+    { "texto": "1945", "correcta": false }
+  ]
+  },
+  {
+    "id": 13,
+    "texto": "¿Cuál es el resultado de la expresión booleana: TRUE AND FALSE?",
+    "respuestas": [
+    { "texto": "TRUE", "correcta": false },
+    { "texto": "FALSE", "correcta": true },
+    { "texto": "NULL", "correcta": false }
+  ]
+},
+{
+    "id": 14,
+    "texto": "¿Cuál es el nombre real del personaje conocido como 'Heisenberg' en la serie Breaking Bad?",
+    "respuestas": [
+    { "texto": "Jesse Pinkman", "correcta": false },
+    { "texto": "Walter White", "correcta": true },
+    { "texto": "Gus Fring", "correcta": false }
+  ]
+},
+{
+   "id": 15,
+   "texto": "¿De qué cantante es la canción \"Mariposa Tecknicolor\"?",
+   "respuestas": [
+    { "texto": "Charly García", "correcta": false },
+    { "texto": "Fito Páez", "correcta": true },
+    { "texto": "Andrés Calamaro", "correcta": false }
+  ]
+},
+{
+  "id": 16,
+  "texto": "¿De qué película es la frase \"Yo soy tu padre\"?",
+  "respuestas": [
+      { "texto": "Star Wars: El Imperio Contraataca", "correcta": true },
+      { "texto": "El Señor de los Anillos", "correcta": false },
+      { "texto": "Harry Potter", "correcta": false }
+    ]
+},
+{
+  "id": 17,
+  "texto": "¿Cuál es el tercer planeta del sistema solar?",
+  "respuestas": [
+      { "texto": "Marte", "correcta": false },
+      { "texto": "Tierra", "correcta": true },
+      { "texto": "Venus", "correcta": false }
+  ]
+},
+{
+  "id": 18,
+  "texto": "En un Arbol Binario de Busqueda, ¿cuál es el recorrido que primero visita la raiz, luego el hijo izquierdo y luego el hijo derecho?",
+  "respuestas": [    
+      { "texto": "InOrden", "correcta": false },
+      { "texto": "PostOrden", "correcta": false },
+      { "texto": "PreOrden", "correcta": true }
+  ]
+},
+{
+  "id": 19,
+  "texto": "¿Qué instrumento toca Slash en Guns N' Roses?",
+    "respuestas": [
+      { "texto": "Batería", "correcta": false },
+      { "texto": "Guitarra", "correcta": true },
+      { "texto": "Bajo", "correcta": false }
+    ]
+},
+{
+  "id": 20,
+  "texto": "¿Qué comando en Linux se utiliza para listar los archivos de un directorio?",
+  "respuestas": [
+      { "texto": "ls", "correcta": true },
+      { "texto": "cd", "correcta": false },
+      { "texto": "rm", "correcta": false }
+    ]
+},
+  {
+    "id": 21,
+    "texto": "¿Cuál es la fórmula química del agua?",
+    "respuestas": [
+      { "texto": "H2O", "correcta": true },
+      { "texto": "CO2", "correcta": false },
+      { "texto": "O2", "correcta": false }
+    ]
+  },
+  {
+    "id": 22,
+    "texto": "¿Quién pintó la Mona Lisa?",
+    "respuestas": [
+      { "texto": "Leonardo da Vinci", "correcta": true },
+      { "texto": "Pablo Picasso", "correcta": false },
+      { "texto": "Vincent van Gogh", "correcta": false }
+    ]
+  },
+  {
+    "id": 23,
+    "texto": "¿Qué gas respiramos los humanos?",
+    "respuestas": [
+      { "texto": "Oxígeno", "correcta": true },
+      { "texto": "Nitrógeno", "correcta": false },
+      { "texto": "Dióxido de carbono", "correcta": false }
+    ]
+  },
+  {
+    "id": 24,
+    "texto": "¿Cuál es el planeta más grande del sistema solar?",
+    "respuestas": [
+      { "texto": "Júpiter", "correcta": true },
+      { "texto": "Saturno", "correcta": false },
+      { "texto": "Neptuno", "correcta": false }
+    ]
+  },
+  {
+    "id": 25,
+    "texto": "¿Qué instrumento mide la temperatura?",
+    "respuestas": [
+      { "texto": "Termómetro", "correcta": true },
+      { "texto": "Barómetro", "correcta": false },
+      { "texto": "Higrómetro", "correcta": false }
+    ]
+  },
+  {
+    "id": 26,
+    "texto": "¿Cuál es el idioma más hablado en el mundo?",
+    "respuestas": [
+      { "texto": "Chino mandarín", "correcta": true },
+      { "texto": "Inglés", "correcta": false },
+      { "texto": "Español", "correcta": false }
+    ]
+  },
+  {
+    "id": 27,
+    "texto": "¿Quién escribió Romeo y Julieta?",
+    "respuestas": [
+      { "texto": "William Shakespeare", "correcta": true },
+      { "texto": "Miguel de Cervantes", "correcta": false },
+      { "texto": "Gabriel García Márquez", "correcta": false }
+    ]
+  },
+  {
+    "id": 28,
+    "texto": "¿Cuál es el órgano más grande del cuerpo humano?",
+    "respuestas": [
+      { "texto": "La piel", "correcta": true },
+      { "texto": "El hígado", "correcta": false },
+      { "texto": "El corazón", "correcta": false }
+    ]
+  },
+  {
+    "id": 29,
+    "texto": "¿Qué océano es el más grande?",
+    "respuestas": [
+      { "texto": "Océano Pacífico", "correcta": true },
+      { "texto": "Océano Atlántico", "correcta": false },
+      { "texto": "Océano Índico", "correcta": false }
+    ]
+  },
+  {
+    "id": 30,
+    "texto": "¿Cuál es el símbolo químico del oro?",
+    "respuestas": [
+      { "texto": "Au", "correcta": true },
+      { "texto": "Ag", "correcta": false },
+      { "texto": "Fe", "correcta": false }
+    ]
+  },
+  {
+    "id": 31,
+    "texto": "¿Cuál es la capital de Francia?",
+    "respuestas": [
+      { "texto": "París", "correcta": true },
+      { "texto": "Londres", "correcta": false },
+      { "texto": "Roma", "correcta": false }
+    ]
+  },
+  {
+    "id": 32,
+    "texto": "¿En qué año llegó Cristóbal Colón a América?",
+    "respuestas": [
+      { "texto": "1492", "correcta": true },
+      { "texto": "1500", "correcta": false },
+      { "texto": "1485", "correcta": false }
+    ]
+  },
+  {
+    "id": 33,
+    "texto": "¿Qué elemento tiene el símbolo 'Na'?",
+    "respuestas": [
+      { "texto": "Sodio", "correcta": true },
+      { "texto": "Níquel", "correcta": false },
+      { "texto": "Nitrógeno", "correcta": false }
+    ]
+  },
+  {
+    "id": 34,
+    "texto": "¿Cuál es el deporte más popular del mundo?",
+    "respuestas": [
+      { "texto": "Fútbol", "correcta": true },
+      { "texto": "Baloncesto", "correcta": false },
+      { "texto": "Tenis", "correcta": false }
+    ]
+  },
+  {
+    "id": 35,
+    "texto": "¿Qué país tiene la mayor población del mundo?",
+    "respuestas": [
+      { "texto": "China", "correcta": true },
+      { "texto": "India", "correcta": false },
+      { "texto": "Estados Unidos", "correcta": false }
+    ]
+  },
+  {
+    "id": 36,
+    "texto": "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+    "respuestas": [
+      { "texto": "Barómetro", "correcta": true },
+      { "texto": "Higrómetro", "correcta": false },
+      { "texto": "Termómetro", "correcta": false }
+    ]
+  },
+  {
+    "id": 37,
+    "texto": "¿Cuál es la velocidad de la luz en el vacío (aproximadamente)?",
+    "respuestas": [
+      { "texto": "300,000 km/s", "correcta": true },
+      { "texto": "150,000 km/s", "correcta": false },
+      { "texto": "1,000 km/s", "correcta": false }
+    ]
+  },
+  {
+    "id": 38,
+    "texto": "¿Quién descubrió la penicilina?",
+    "respuestas": [
+      { "texto": "Alexander Fleming", "correcta": true },
+      { "texto": "Marie Curie", "correcta": false },
+      { "texto": "Louis Pasteur", "correcta": false }
+    ]
+  },
+  {
+    "id": 39,
+    "texto": "¿Cuál es la moneda oficial de Japón?",
+    "respuestas": [
+      { "texto": "Yen", "correcta": true },
+      { "texto": "Won", "correcta": false },
+      { "texto": "Dólar", "correcta": false }
+    ]
+  },
+  {
+    "id": 40,
+    "texto": "¿Qué animal es conocido como el rey de la selva?",
+    "respuestas": [
+      { "texto": "León", "correcta": true },
+      { "texto": "Tigre", "correcta": false },
+      { "texto": "Elefante", "correcta": false }
+    ]
+  }
+]
