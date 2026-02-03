@@ -19,5 +19,5 @@ Otros: JSON para almacenar preguntas y lógica de turnos
 4. Hacer click en “Tirar dado” para avanzar y responder preguntas.
 5. El primer jugador que llegue a la casilla 20 gana.
 
-[🎮 Jugar ahora](https://dulceguez.github.io/mi-juego-js/)
+[🎮 Jugar ahora](https://dulceguez.github.io/mi-juego-js-frontend/)
 
