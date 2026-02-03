@@ -17,6 +17,13 @@ fetch('./data/preguntas.json')
 })
 .catch(err => console.error("Error al cargar preguntas:", err));
 
+let indicePregunta = 0; // lleva la cuenta de la pregunta actual
+
+function obtenerPregunta() {
+  if (!preguntas.length) return null; // evita error si no cargaron
+  if (indicePregunta >= preguntas.length) indicePregunta = 0;
+  return preguntas[indicePregunta++];
+}
 
 //  Tirar dado
 const tirarDadoBtn = document.getElementById('tirarDado');
@@ -50,6 +57,8 @@ tirarDadoBtn.addEventListener('click', () => {
 
       // Volver a habilitar el botón para el turno del siguiente jugador
       tirarDadoBtn.disabled = false;
+      const pregunta = obtenerPregunta();
+      mostrarPregunta(pregunta);
     }
   }, 100);
 
