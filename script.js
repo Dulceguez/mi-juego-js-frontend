@@ -28,13 +28,13 @@ tirarDadoBtn.addEventListener('click', () => {
   let contador = 0;
    const intervalo = setInterval(() => {
     const numero = Math.floor(Math.random() * 6) + 1;
-    dadoImg.src = "./img/dado${numero}.png";
+    dadoImg.src = `img/dado${numero}.png`;
     contador++;
     if (contador >= 10) {
       clearInterval(intervalo);
 
       const resultadoFinal = Math.floor(Math.random() * 6) + 1;
-      dadoImg.src = "./img/dado${resultadoFinal}.png";
+      dadoImg.src = `img/dado${resultadoFinal}.png`;
     // Mover al jugador actual
       jugadores[turnoActual].posicion += resultadoFinal;
 
