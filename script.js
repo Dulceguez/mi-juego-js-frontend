@@ -29,20 +29,25 @@ function obtenerPregunta() {
 const tirarDadoBtn = document.getElementById('tirarDado');
 tirarDadoBtn.addEventListener('click', () => {
  //solo puedo tirar si es mi turno
-  if (!jugadores.length || !jugadores[turnoActual]) { return;}
+  if (!jugadores.length || !jugadores[turnoActual])  return;
  
   tirarDadoBtn.disabled = true;
+
   let contador = 0;
-   const intervalo = setInterval(() => {
+
+  const intervalo = setInterval(() => {
     const numero = Math.floor(Math.random() * 6) + 1;
     dadoImg.src = `img/dado${numero}.png`;
+
     contador++;
+
     if (contador >= 10) {
       clearInterval(intervalo);
 
       const resultadoFinal = Math.floor(Math.random() * 6) + 1;
       dadoImg.src = `img/dado${resultadoFinal}.png`;
-    // Mover al jugador actual
+
+      // mover jugador
       jugadores[turnoActual].posicion += resultadoFinal;
 
       // Actualizar tablero y fichas
@@ -50,13 +55,9 @@ tirarDadoBtn.addEventListener('click', () => {
       actualizarTablero();
 
       // Revisar ganador
-      if (!revisarGanador()) {
-        // Pasar al siguiente turno solo si no hay ganador
-        siguienteTurno();
-      }
+      if (revisarGanador()) return;
+      
 
-      // Volver a habilitar el botón para el turno del siguiente jugador
-      tirarDadoBtn.disabled = false;
       const pregunta = obtenerPregunta();
       mostrarPregunta(pregunta);
     }
@@ -85,17 +86,20 @@ function actualizarFichas(jugadores) {
 function mostrarPregunta(pregunta) {
   const contenedor = document.getElementById('preguntaContainer');
   contenedor.innerHTML = ''; //limpia la pregunta anterior
+
   if (!pregunta) {
     console.warn('Se intentó mostrar una pregunta nula');
     return;
   }
+
   const p = document.createElement('p');
   p.textContent = pregunta.texto;
   contenedor.appendChild(p);
 
-  pregunta.respuestas.forEach((resp, idx) => {
+  pregunta.respuestas.forEach((resp) => {
     const btn = document.createElement('button');
     btn.textContent = resp.texto;
+
     btn.onclick = () => {
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
@@ -103,10 +107,20 @@ function mostrarPregunta(pregunta) {
       } else {
         alert("Respuesta incorrecta.");
       }
+
       contenedor.innerHTML = ''; // Ocultar pregunta
       actualizarFichas(jugadores);
+
+      // verifico ganador
+      if (revisarGanador()) return;
+
+      // cambio turno
       siguienteTurno();
+
+      // Volver a habilitar dado
+      tirarDadoBtn.disabled = false;
     };
+
     contenedor.appendChild(btn);
   });
 }
@@ -205,33 +219,6 @@ function actualizarTablero() {
   });
 }
 
-
-function mostrarPregunta(pregunta) {
-  const contenedor = document.getElementById('preguntaContainer');
-  contenedor.innerHTML = '';
-  if (!pregunta) return;
-
-  const p = document.createElement('p');
-  p.textContent = pregunta.texto;
-  contenedor.appendChild(p);
-
-  pregunta.respuestas.forEach(resp => {
-    const btn = document.createElement('button');
-    btn.textContent = resp.texto;
-    btn.onclick = () => {
-      if (resp.correcta) {
-        alert("¡Respuesta correcta!");
-        jugadores[turnoActual].posicion += 1; // avanzar 1 casilla si acierta
-      } else {
-        alert("Respuesta incorrecta.");
-      }
-      contenedor.innerHTML = '';
-      actualizarFichas(jugadores);
-      siguienteTurno();
-    };
-    contenedor.appendChild(btn);
-  });
-}
 
   // Avisar cuando un jugador gana
  function revisarGanador() {
