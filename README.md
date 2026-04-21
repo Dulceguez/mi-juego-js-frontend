@@ -1,17 +1,27 @@
-# Mi Juego de Preguntas – Demo en GitHub Pages
+# 🎮 Mi Juego de Preguntas – Demo en GitHub Pages
 
-Este proyecto es un juego de tablero tipo “preguntas y respuestas” desarrollado con HTML, CSS y JavaScript, usando Node.js para la versión multijugador (servidor) y modo local para demo en GitHub Pages.
+Juego de tablero tipo “preguntas y respuestas” desarrollado con **HTML, CSS y JavaScript**. Esta versión corresponde al **frontend puro**, desplegado en GitHub Pages como demo jugable.
 
-Los jugadores avanzan casillas lanzando el dado y respondiendo preguntas. Se pueden jugar 2-4 jugadores en modo local, el juego muestra turnos, tablero y ganador.
+---
 
-🚀 Tecnologías usadas
+## 📌 Descripción
 
-Frontend: HTML, CSS, JavaScript, DOM
-Control de versiones: Git y GitHub
+Los jugadores avanzan por un tablero lanzando un dado y respondiendo preguntas hasta llegar a la meta.  
+Permite partidas de **2 a 4 jugadores en el mismo dispositivo (multijugador local / hotseat)**.
 
-Otros: JSON para almacenar preguntas y lógica de turnos
+---
 
-🕹 Cómo jugar (modo local / GitHub Pages)
+## 🚀 Tecnologías usadas
+
+- HTML5
+- CSS3
+- JavaScript (DOM manipulation)
+- JSON (preguntas y lógica de turnos)
+- Git / GitHub
+
+---
+
+## 🕹️ Cómo jugar (modo local / GitHub Pages)
 
 1. Abrir el juego en GitHub Pages
 2. Ingresar tu nombre y elegir un color de ficha.
@@ -19,5 +29,14 @@ Otros: JSON para almacenar preguntas y lógica de turnos
 4. Hacer click en “Tirar dado” para avanzar y responder preguntas.
 5. El primer jugador que llegue a la casilla 20 gana.
 
+---
+
+## 🎯 Demo
+
 [🎮 Jugar ahora](https://dulceguez.github.io/mi-juego-js-frontend/)
 
+---
+
+## 👨‍💻 Autor
+
+Genaro Medina Castellano y Dulce Domínguez
