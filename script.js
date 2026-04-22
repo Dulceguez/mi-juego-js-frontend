@@ -1,23 +1,24 @@
 console.log("JS cargado correctamente");
 
-let jugadorId = null;
 let jugadores = []; //Lista de jugadores activos
 let preguntas = []; //Lista de preguntas
 let turnoActual = 0; //Para controlar de quien es el turno
 let colorElegido = false;
-const dadoImg = document.getElementById('dadoImg');
+let indicePregunta = 0; // lleva la cuenta de la pregunta actual
 
-// --- Cargar preguntas desde JSON ---
+const dadoImg = document.getElementById('dadoImg');
+const tirarDadoBtn = document.getElementById('tirarDado');
+
+//  -------------------- CARGAR PREGUNTAS --------------------
 fetch('./data/preguntas.json')
   .then(res => res.json())
   .then(data => {
-    //se Mesclan aleatoriamente y se eligen 20
+    //se Mezclan aleatoriamente y se eligen 20
     preguntas = data.sort(() => 0.5 - Math.random()).slice(0, 21);
     console.log("Preguntas cargadas:", preguntas);
 })
 .catch(err => console.error("Error al cargar preguntas:", err));
 
-let indicePregunta = 0; // lleva la cuenta de la pregunta actual
 
 function obtenerPregunta() {
   if (!preguntas.length) return null; // evita error si no cargaron
@@ -25,8 +26,8 @@ function obtenerPregunta() {
   return preguntas[indicePregunta++];
 }
 
-//  Tirar dado
-const tirarDadoBtn = document.getElementById('tirarDado');
+//  -------------------- DADO --------------------
+
 tirarDadoBtn.addEventListener('click', () => {
  //solo puedo tirar si es mi turno
   if (!jugadores.length || !jugadores[turnoActual])  return;
@@ -38,7 +39,6 @@ tirarDadoBtn.addEventListener('click', () => {
   const intervalo = setInterval(() => {
     const numero = Math.floor(Math.random() * 6) + 1;
     dadoImg.src = `img/dado${numero}.png`;
-
     contador++;
 
     if (contador >= 10) {
@@ -51,13 +51,13 @@ tirarDadoBtn.addEventListener('click', () => {
       jugadores[turnoActual].posicion += resultadoFinal;
 
       // Actualizar tablero y fichas
-      actualizarFichas(jugadores);
+      actualizarFichas();
       actualizarTablero();
 
       // Revisar ganador
       if (revisarGanador()) return;
       
-
+      // mostrar pregunta
       const pregunta = obtenerPregunta();
       mostrarPregunta(pregunta);
     }
@@ -65,32 +65,12 @@ tirarDadoBtn.addEventListener('click', () => {
 
 });
 
-// --- Mostrar ficha y tablero ---
-function actualizarFichas(jugadores) {
-  // Eliminar fichas anteriores para evitar duplicados
-  document.querySelectorAll('.ficha').forEach(ficha => ficha.remove());
-
-  jugadores.forEach(j => {
-    const casilla = document.getElementById(`casilla-${j.posicion}`);
-    if (casilla) {
-      const ficha = document.createElement('div');
-      ficha.classList.add('ficha');
-      ficha.style.backgroundColor = j.color;
-      ficha.textContent = j.nombre[0].toUpperCase();
-      casilla.appendChild(ficha);
-    }
-  });
-}
-
-//  Mostrar pregunta
+// ----------------------- PREGUNTAS --------------------
 function mostrarPregunta(pregunta) {
   const contenedor = document.getElementById('preguntaContainer');
   contenedor.innerHTML = ''; //limpia la pregunta anterior
 
-  if (!pregunta) {
-    console.warn('Se intentó mostrar una pregunta nula');
-    return;
-  }
+  if (!pregunta)  return;
 
   const p = document.createElement('p');
   p.textContent = pregunta.texto;
@@ -103,13 +83,14 @@ function mostrarPregunta(pregunta) {
     btn.onclick = () => {
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
-        jugadores[turnoActual].posicion += 1; // ejemplo: avanzar 1 casilla
+        jugadores[turnoActual].posicion += 1; 
       } else {
         alert("Respuesta incorrecta.");
       }
 
       contenedor.innerHTML = ''; // Ocultar pregunta
       actualizarFichas(jugadores);
+      actualizarTablero();
 
       // verifico ganador
       if (revisarGanador()) return;
@@ -125,7 +106,8 @@ function mostrarPregunta(pregunta) {
   });
 }
 
-// --- Selector de color y nombre ---
+
+// -------------------- JUGADORES --------------------
 window.addEventListener('DOMContentLoaded', () => {
 let nombre = "";
   while(!nombre.trim()){
@@ -142,10 +124,13 @@ let nombre = "";
         agregarJugador(nombre, color);
         selector.style.display = 'none';
         alert(`Jugador ${nombre} agregado con color ${color}`);
-        actualizarFichas(jugadores);
+        
+        actualizarTablero();
+        actualizarFichas();
       });
   });
 });
+
 
 function actualizarColores(){
   console.log('Jugadores:', jugadores);
@@ -172,24 +157,38 @@ function agregarJugador(nombre, color) {
   alert(`Jugador ${nombre} agregado con color ${color}`);
 }
 
-
+// -------------------- TURNOS --------------------
 function siguienteTurno() {
   turnoActual = (turnoActual + 1) % jugadores.length;
   alert(`Es el turno de ${jugadores[turnoActual].nombre}`);
 }
 
 
-// Actualzia el tablero y modifica las casillas segun la posicion de los jugadores
+// -------------------- TABLERO --------------------
+function actualizarFichas() {
+  // Eliminar fichas anteriores para evitar duplicados
+  document.querySelectorAll('.ficha').forEach(ficha => ficha.remove());
+
+  jugadores.forEach(j => {
+    const casilla = document.getElementById(`casilla-${j.posicion}`);
+    if (casilla) {
+      const ficha = document.createElement('div');
+      ficha.classList.add('ficha');
+      ficha.style.backgroundColor = j.color;
+      ficha.textContent = j.nombre[0].toUpperCase();
+      casilla.appendChild(ficha);
+    }
+  });
+}
+
 function actualizarTablero() {
-  const tablero = document.getElementById('tablero');
-  const casillaInicio = document.getElementById('casillaInicio');
-  casillaInicio.querySelectorAll('.ficha').forEach(ficha => ficha.remove()); // limpio fichas en largada
- 
+  const tablero = document.getElementById('tablero'); 
   tablero.innerHTML = ''; // Limpiar tablero
 
   for (let i = 1; i < 21; i++) {
     const casilla = document.createElement('div');
     casilla.className = 'casilla';
+    casilla.id = `casilla-${i}`;
     casilla.textContent = i;
 
     // Ver si hay algún jugador en esta casilla
@@ -198,7 +197,6 @@ function actualizarTablero() {
         const ficha = document.createElement('div');
         ficha.className = 'ficha';
         ficha.style.backgroundColor = j.color;
-        ficha.title = j.nombre;
         ficha.textContent = (j.nombre && j.nombre.length > 0) ? j.nombre[0].toUpperCase() : '?';
         casilla.appendChild(ficha);
       }
@@ -206,23 +204,12 @@ function actualizarTablero() {
 
     tablero.appendChild(casilla);
   }
-  // Poner las fichas de los jugadores que estén en la posición 0 (largada)
-  jugadores.forEach(j => {
-    if (j.posicion === 0) {
-      const ficha = document.createElement('div');
-      ficha.className = 'ficha';
-      ficha.style.backgroundColor = j.color;
-      ficha.title = j.nombre;
-      ficha.textContent = (j.nombre && j.nombre.length > 0) ? j.nombre[0].toUpperCase() : '?';
-      casillaInicio.appendChild(ficha);
-    }
-  });
 }
 
-
-  // Avisar cuando un jugador gana
+  // -------------------- GANADOR --------------------
  function revisarGanador() {
   const ganador = jugadores.find(j => j.posicion >= 20); // ejemplo: meta en casilla 20
+  
   if (ganador) {
     alert(`${ganador.nombre} ganó la partida 🎉`);
     // Reiniciar juego o deshabilitar tablero
