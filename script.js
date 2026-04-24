@@ -5,6 +5,7 @@ let preguntas = []; //Lista de preguntas
 let turnoActual = 0; //Para controlar de quien es el turno
 let colorElegido = false;
 let indicePregunta = 0; // lleva la cuenta de la pregunta actual
+let preguntaPendiente = false;
 
 const dadoImg = document.getElementById('dadoImg');
 const tirarDadoBtn = document.getElementById('tirarDado');
@@ -27,8 +28,12 @@ function obtenerPregunta() {
 }
 
 //  -------------------- DADO --------------------
-
+ 
 tirarDadoBtn.addEventListener('click', () => {
+  if (preguntaPendiente) {
+    alert("Tenés que responder la pregunta primero");
+    return;
+  }
  //solo puedo tirar si es mi turno
   if (!jugadores.length || !jugadores[turnoActual])  return;
  
@@ -60,6 +65,9 @@ tirarDadoBtn.addEventListener('click', () => {
       // mostrar pregunta
       const pregunta = obtenerPregunta();
       mostrarPregunta(pregunta);
+
+      preguntaPendiente = true;
+      botonDado.disabled = true;
     }
   }, 100);
 
@@ -87,6 +95,8 @@ function mostrarPregunta(pregunta) {
       } else {
         alert("Respuesta incorrecta.");
       }
+      preguntaPendiente = false;
+      botonDado.disabled = false;
 
       contenedor.innerHTML = ''; // Ocultar pregunta
       actualizarFichas(jugadores);
