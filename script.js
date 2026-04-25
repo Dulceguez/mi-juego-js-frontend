@@ -1,3 +1,4 @@
+console.log("VERSION NUEVA 123");
 console.log("JS cargado correctamente");
 
 let jugadores = []; //Lista de jugadores activos
