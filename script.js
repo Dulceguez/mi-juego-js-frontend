@@ -122,6 +122,10 @@ window.addEventListener('DOMContentLoaded', () => {
 let nombre = "";
   while(!nombre.trim()){
     nombre = prompt("Ingresá tu nombre:");
+
+    if (nombre === null) {
+      nombre = ""; // fuerza a seguir en el loop
+    }
   }
 
   const selector = document.getElementById('selectorColor');
