@@ -124,6 +124,7 @@ let nombre = "";
     nombre = prompt("Ingresá tu nombre:");
 
     if (nombre === null) {
+      alert("Tenés que ingresar un nombre");
       nombre = ""; // fuerza a seguir en el loop
     }
   }
