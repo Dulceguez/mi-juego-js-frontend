@@ -119,32 +119,46 @@ function mostrarPregunta(pregunta) {
 
 // -------------------- JUGADORES --------------------
 window.addEventListener('DOMContentLoaded', () => {
-let nombre = "";
+  const nombre = pedirNombre();
+  inicialSeleccionColor(nombre);
+});
+
+function pedirNombre() {
+  let nombre = "";
   while(!nombre.trim()){
     nombre = prompt("Ingresá tu nombre:");
 
     if (nombre === null) {
       alert("Tenés que ingresar un nombre");
-      nombre = ""; // fuerza a seguir en el loop
+      continue; // vuelve a preguntar
+      
     }
-  }
 
+    nombre = input.trim();
+  }
+  return nombre;
+}
+
+function inicialSeleccionColor(nombre) {
   const selector = document.getElementById('selectorColor');
   const botones = document.querySelectorAll('.color-btn');
+ 
   selector.style.display = 'flex';
 
   botones.forEach(btn => {
        btn.addEventListener('click', () => {
-        const color = btn.dataset.color.toLowerCase();
-        agregarJugador(nombre, color);
-        selector.style.display = 'none';
-        alert(`Jugador ${nombre} agregado con color ${color}`);
-        
-        actualizarTablero();
-        actualizarFichas();
+          const color = btn.dataset.color.toLowerCase();
+          
+          agregarJugador(nombre, color);
+          selector.style.display = 'none';
+
+          alert(`Jugador ${nombre} agregado con color ${color}`);
+          
+          actualizarTablero();
+          actualizarFichas();
       });
   });
-});
+}
 
 
 function actualizarColores(){
