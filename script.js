@@ -93,7 +93,8 @@ function actualizarColores(){
 }
 
 function agregarJugador(nombre, color) {
-  jugadores.push({ nombre, color, posicion: 0 });
+  const inicio = document.getElementById("casillaInicio");
+  jugadores.push({ nombre, color, posicion: inicio });
   actualizarFichas();
   actualizarTablero();
   alert(`Jugador ${nombre} agregado con color ${color}`);
@@ -185,8 +186,6 @@ function mostrarPregunta(pregunta) {
     contenedor.appendChild(btn);
   });
 }
-
-
 
 // -------------------- TURNOS --------------------
 function siguienteTurno() {
