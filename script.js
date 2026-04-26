@@ -135,7 +135,7 @@ function pedirNombre() {
       
     }
 
-    nombre = input.trim();
+    nombre = nombre.trim();
   }
   return nombre;
 }
