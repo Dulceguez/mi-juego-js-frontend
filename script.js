@@ -65,10 +65,7 @@ function inicialSeleccionColor(nombre) {
           const color = btn.dataset.color.toLowerCase();
           
           agregarJugador(nombre, color);
-          selector.style.display = 'none';
           
-          actualizarTablero();
-          actualizarFichas();
       });
   });
 }
@@ -92,12 +89,38 @@ function actualizarColores(){
   });
 }
 
+function actualizarListaJugadores() {
+  const lista = document.getElementById("listaJugadores");
+  lista.innerHTML = "";
+
+  jugadores.forEach(j => {
+    const li = document.createElement("li");
+    li.textContent = `${j.nombre} (${j.color})`;
+    lista.appendChild(li);
+  });
+}
+
 function agregarJugador(nombre, color) {
-  
+  const nombre = document.getElementById("nombreInput").value.trim();
+  const color = document.getElementById("colorSelect").value;
+
+  if (!nombre) return alert("Ingresá un nombre");
+
   jugadores.push({ nombre, color, posicion: 0 });
-  actualizarFichas();
+
+  actualizarListaJugadores(); // UI del lobby
+}
+function iniciarJuego() {
+  if (jugadores.length < 2) {
+    alert("Necesitás al menos 2 jugadores");
+    return;
+  }
+
+  document.getElementById("lobby").style.display = "none";
+  document.getElementById("juego").style.display = "block";
+
   actualizarTablero();
-  alert(`Jugador ${nombre} agregado con color ${color}`);
+  actualizarFichas();
 }
 
 //  -------------------- DADO --------------------
