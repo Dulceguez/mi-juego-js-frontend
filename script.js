@@ -129,9 +129,6 @@ tirarDadoBtn.addEventListener('click', () => {
       // mover jugador
       jugadores[turnoActual].posicion += resultadoFinal;
 
-
-      // Revisar ganador
-      if (revisarGanador()) return;
       
       // mostrar pregunta
 
@@ -244,7 +241,7 @@ function actualizarTablero() {
 
   // -------------------- GANADOR --------------------
  function revisarGanador() {
-  const ganador = jugadores.find(j => j.posicion >= 20); // ejemplo: meta en casilla 20
+  const ganador = jugadores.find(j => j.posicion >= 21); // ejemplo: meta en casilla 20
   
   if (ganador) {
     alert(`${ganador.nombre} ganó la partida 🎉`);
