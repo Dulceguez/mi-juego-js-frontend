@@ -93,8 +93,9 @@ function actualizarColores(){
 }
 
 function agregarJugador(nombre, color) {
-  
-  jugadores.push({ nombre, color, posicion: 0 });
+  const casillaInicio = document.getElementById("casillaInicio");
+
+  jugadores.push({ nombre, color, posicion: casillaInicio });
   actualizarFichas();
   actualizarTablero();
   alert(`Jugador ${nombre} agregado con color ${color}`);
@@ -215,7 +216,7 @@ function actualizarTablero() {
   const tablero = document.getElementById('tablero'); 
   tablero.innerHTML = ''; // Limpiar tablero
 
-  for (let i = 0; i < 21; i++) {
+  for (let i = 1; i < 21; i++) {
     const casilla = document.createElement('div');
     casilla.className = 'casilla';
     casilla.id = `casilla-${i}`;
