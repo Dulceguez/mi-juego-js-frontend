@@ -201,7 +201,13 @@ function actualizarFichas() {
   document.querySelectorAll('.ficha').forEach(ficha => ficha.remove());
 
   jugadores.forEach(j => {
-  
+      const casilla = casillas[j.posicion];
+
+      if (!casilla) {
+      console.error("Posición inválida:", j.posicion);
+      return;
+      }
+
       const ficha = document.createElement('div');
       ficha.classList.add('ficha');
       ficha.style.backgroundColor = j.color;
