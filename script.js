@@ -244,13 +244,20 @@ function actualizarTablero() {
   const ganador = jugadores.find(j => j.posicion >= 21); // ejemplo: meta en casilla 20
   
   if (ganador) {
-    alert(`${ganador.nombre} ganó la partida 🎉`);
-    // Reiniciar juego o deshabilitar tablero
-    tirarDadoBtn.disabled = true;
+    setTimeout(() => {
+      const jugarDeNuevo = confirm(`Ganó ${ganador.nombre} 🎉\n¿Querés jugar otra partida?`);
+      // Reiniciar juego o deshabilitar tablero
+      if (jugarDeNuevo) {
+          reiniciarJuego();
+        } else {
+          finalizarJuego();
+        }
+    }, 100);
+
     return true;
   }
   return false;
-}
+ }
 
   // Avisar cuando un jugador se desconecta 
  function eliminarJugador(nombre) {
