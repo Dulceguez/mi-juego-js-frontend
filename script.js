@@ -129,9 +129,6 @@ tirarDadoBtn.addEventListener('click', () => {
       // mover jugador
       jugadores[turnoActual].posicion += resultadoFinal;
 
-      // Actualizar tablero y fichas
-      actualizarFichas();
-      actualizarTablero();
 
       // Revisar ganador
       if (revisarGanador()) return;
