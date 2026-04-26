@@ -93,9 +93,8 @@ function actualizarColores(){
 }
 
 function agregarJugador(nombre, color) {
-  const casillaInicio = document.getElementById("casillaInicio");
-  console.log('Jugador en casilla ', casillaInicio);
-  jugadores.push({ nombre, color, posicion: casillaInicio });
+  
+  jugadores.push({ nombre, color, posicion: 0 });
   actualizarFichas();
   actualizarTablero();
   alert(`Jugador ${nombre} agregado con color ${color}`);
