@@ -36,13 +36,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function pedirNombre() {
   let nombre = "";
-  while(!nombre.trim()){
+
+  while(nombre != ""){
     nombre = prompt("Ingresá tu nombre:");
 
     if (nombre === null) {
       alert("Tenés que ingresar un nombre");
       continue; // vuelve a preguntar
-      
     }
 
     nombre = nombre.trim();
