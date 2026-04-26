@@ -95,8 +95,7 @@ function actualizarColores(){
 
 function agregarJugador(nombre, color) {
   jugadores.push({ nombre, color, posicion: 0 });
-  actualizarColores();
-  actualizarTablero();
+
   alert(`Jugador ${nombre} agregado con color ${color}`);
 }
 
@@ -164,14 +163,14 @@ function mostrarPregunta(pregunta) {
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
         jugadores[turnoActual].posicion += 1; 
+        actualizarFichas(jugadores);
+        actualizarTablero();
       } else {
         alert("Respuesta incorrecta.");
       }
       preguntaPendiente = false;
 
       contenedor.innerHTML = ''; // Ocultar pregunta
-      actualizarFichas(jugadores);
-      actualizarTablero();
 
       // verifico ganador
       if (revisarGanador()) return;
