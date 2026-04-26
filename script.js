@@ -96,7 +96,7 @@ function agregarJugador(nombre, color) {
   
   jugadores.push({ nombre, color, posicion: 0 });
   actualizarFichas();
- 
+  actualizarTablero();
   alert(`Jugador ${nombre} agregado con color ${color}`);
 }
 
