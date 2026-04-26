@@ -259,6 +259,21 @@ function actualizarTablero() {
   return false;
  }
 
+ function reiniciarJuego() {
+    jugadores.forEach(j => {
+      j.posicion = 0;
+    });
+
+    turnoActual = 0;
+    tirarDadoBtn.disabled = false;
+    actualizarFichas();
+ }
+
+ function finalizarJuego() {
+  tirarDadoBtn.disabled = true;
+  alert("Juego terminado. Recarga la pagina para empezar de nuevo.");
+ }
+
   // Avisar cuando un jugador se desconecta 
  function eliminarJugador(nombre) {
   jugadores = jugadores.filter(j => j.nombre !== nombre);
