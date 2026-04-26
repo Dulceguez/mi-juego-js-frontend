@@ -96,7 +96,7 @@ function agregarJugador(nombre, color) {
   
   jugadores.push({ nombre, color, posicion: 0 });
   actualizarFichas();
-  actualizarTablero();
+ 
   alert(`Jugador ${nombre} agregado con color ${color}`);
 }
 
@@ -163,7 +163,7 @@ function mostrarPregunta(pregunta) {
     btn.onclick = () => {
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
-        jugadores[turnoActual].posicion += 1; 
+        jugadores[turnoActual].posicion; 
         actualizarFichas(jugadores);
         actualizarTablero();
       } else {
@@ -196,18 +196,18 @@ function siguienteTurno() {
 
 // -------------------- TABLERO --------------------
 function actualizarFichas() {
+  const casillas = document.querySelectorAll(".casilla, .casillaEspecial");
   // Eliminar fichas anteriores para evitar duplicados
   document.querySelectorAll('.ficha').forEach(ficha => ficha.remove());
 
   jugadores.forEach(j => {
-    const casilla = document.getElementById(`casilla-${j.posicion}`);
-    if (casilla) {
+  
       const ficha = document.createElement('div');
       ficha.classList.add('ficha');
       ficha.style.backgroundColor = j.color;
-      ficha.textContent = j.nombre[0].toUpperCase();
+
       casilla.appendChild(ficha);
-    }
+    
   });
 }
 
