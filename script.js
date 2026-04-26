@@ -1,4 +1,3 @@
-console.log("VERSION NUEVA 123");
 console.log("JS cargado correctamente");
 
 let jugadores = []; //Lista de jugadores activos
@@ -217,7 +216,7 @@ function actualizarTablero() {
   const tablero = document.getElementById('tablero'); 
   tablero.innerHTML = ''; // Limpiar tablero
 
-  for (let i = 1; i < 21; i++) {
+  for (let i = 0; i < 21; i++) {
     const casilla = document.createElement('div');
     casilla.className = 'casilla';
     casilla.id = `casilla-${i}`;
