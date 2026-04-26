@@ -47,8 +47,10 @@ function pedirNombre() {
 
     nombre = nombre.trim();
   }
-  return nombre;
-}
+  if (nombre !== "") {
+      return nombre;
+    }
+  } 
 
 function inicialSeleccionColor(nombre) {
   const selector = document.getElementById('selectorColor');
