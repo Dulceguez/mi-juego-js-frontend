@@ -35,22 +35,25 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function pedirNombre() {
-  let nombre = "";
+  let nombre;
 
-  while(nombre != ""){
+  while (true) {
     nombre = prompt("Ingresá tu nombre:");
 
     if (nombre === null) {
       alert("Tenés que ingresar un nombre");
-      continue; // vuelve a preguntar
+      continue;
     }
 
     nombre = nombre.trim();
-  }
-  if (nombre !== "") {
+
+    if (nombre !== "") {
       return nombre;
     }
-  } 
+
+    alert("El nombre no puede estar vacío");
+  }
+}
 
 function inicialSeleccionColor(nombre) {
   const selector = document.getElementById('selectorColor');
@@ -64,8 +67,6 @@ function inicialSeleccionColor(nombre) {
           
           agregarJugador(nombre, color);
           selector.style.display = 'none';
-
-          alert(`Jugador ${nombre} agregado con color ${color}`);
           
           actualizarTablero();
           actualizarFichas();
