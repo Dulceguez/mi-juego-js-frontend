@@ -93,7 +93,7 @@ function iniciarJuego() {
   }
 
   document.getElementById("lobby").style.display = "none";
-  document.getElementById("juego").style.display = "block";
+  document.getElementById("juegoContainer").style.display = "block";
 
   actualizarTablero();
   actualizarFichas();
