@@ -78,8 +78,11 @@ function actualizarListaJugadores() {
 
   jugadores.forEach(j => {
     const li = document.createElement("li");
-    li.textContent = `${j.nombre} - ${j.color}`;
-    li.style.color = j.color;
+
+    li.innerHTML = `
+      ${j.nombre}
+      <span class="color-indicador" style="background:${j.color};"></span>
+    `;
     lista.appendChild(li);
   });
 }
