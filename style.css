@@ -92,13 +92,13 @@ button:hover {
 #juegoContainer {
   position: relative;
   z-index: 10;
-  display: none;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 30px;
-  width: 90%;
+  gap: 20px;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -116,10 +116,6 @@ button:hover {
     gap: 20px;
     }
   
-  #dadoContainer, #tableroCompleto, #preguntaContainer {
-    width: 100%;
-    max-width: 350px;
-    } 
   
   #preguntaContainer {
     display: flex;
@@ -235,7 +231,7 @@ button:hover {
   max-height: 80vh;
   overflow-y: auto;
   background-color: #1f2c38;
-  border: 3px solid red;
+  border: 3px solid rgb(0, 0, 0);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
