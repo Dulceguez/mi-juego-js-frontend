@@ -32,7 +32,7 @@ h1 {
 #juegoContainer {
   position: relative;
   z-index: 10;
-  display: flex;
+  display: none;
   justify-content: center; /* Cambié de center a flex-start para que se mueva un poco a la izquierda */
   align-items: flex-start;
   gap: 40px;

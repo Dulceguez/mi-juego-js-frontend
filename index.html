@@ -10,26 +10,22 @@
 
   <h1>Juego de Preguntas y Respuestas</h1>
 
-  <div id="selectorColor" class="pantalla-color">
-    <div class="modal-color">
-      <h2>Elegí tu color de ficha:</h2>
-      <div class="botones-color">
-        <button class="color-btn" data-color="red" style="background-color: red;"></button>
-        <button class="color-btn" data-color="blue" style="background-color: blue;"></button>
-        <button class="color-btn" data-color="green" style="background-color: green;"></button>
-        <button class="color-btn" data-color="yellow" style="background-color: yellow;"></button>
-      </div>
-    </div>
-  </div>
   <div id="lobby">
-  <input id="nombre">
-  <select id="color"></select>
-  <button onclick="agregarJugador()">Agregar</button>
+    <input id="nombreInput" placeholder="Nombre del jugador" />
+    <select id="color">
+      <option value="red">Rojo</option>
+      <option value="blue">Azul</option>
+      <option value="green">Verde</option>
+      <option value="yellow">Amarillo</option>
+    </select>
 
-  <div id="listaJugadores"></div>
+    <button onclick="agregarJugador()">Agregar jugador</button>
 
-  <button onclick="iniciarJuego()">Iniciar partida</button>
-</div>
+    <ul id="listaJugadores"></ul>
+
+    <button onclick="iniciarJuego()">Iniciar partida</button>
+  </div>
+
   <div id="juegoContainer">
     <div id="dadoContainer">
       <img id="dadoImg" src="./img/dado1.png" alt="Dado" width="100" height="100" />

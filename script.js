@@ -29,6 +29,10 @@ function obtenerPregunta() {
 
 // -------------------- JUGADORES --------------------
 
+function mostrarLobby() {
+  document.getElementById("lobby").style.display = "block";
+  document.getElementById("juegoContainer").style.display = "none";
+}
 
 function inicialSeleccionColor(nombre) {
   const selector = document.getElementById('selectorColor');
@@ -86,6 +90,7 @@ function agregarJugador(nombre, color) {
 
   actualizarListaJugadores(); // UI del lobby
 }
+
 function iniciarJuego() {
   if (jugadores.length < 2) {
     alert("Necesitás al menos 2 jugadores");
@@ -97,7 +102,7 @@ function iniciarJuego() {
 
   actualizarTablero();
   actualizarFichas();
-  turnoActual = 0;
+
 }
 
 //  -------------------- DADO --------------------
@@ -129,6 +134,7 @@ tirarDadoBtn.addEventListener('click', () => {
       // mover jugador
       jugadores[turnoActual].posicion += resultadoFinal;
 
+      actualizarFichas();
       
       // mostrar pregunta
 
@@ -136,7 +142,7 @@ tirarDadoBtn.addEventListener('click', () => {
       mostrarPregunta(pregunta);
 
       preguntaPendiente = true;
-      tirarDadoBtn.disabled = true;
+      
     }
   }, 100);
 
@@ -158,6 +164,7 @@ function mostrarPregunta(pregunta) {
     btn.textContent = resp.texto;
 
     btn.onclick = () => {
+
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
         jugadores[turnoActual].posicion; 
@@ -271,6 +278,7 @@ function actualizarTablero() {
 
  function finalizarJuego() {
   tirarDadoBtn.disabled = true;
+  mostrarLobby();
   alert("Juego terminado. Recarga la pagina para empezar de nuevo.");
  }
 
