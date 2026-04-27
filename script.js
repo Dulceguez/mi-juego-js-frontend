@@ -39,19 +39,16 @@ function mostrarLobby() {
 
 
 function actualizarColores(){
-  console.log('Jugadores:', jugadores);
   const coloresUsados = jugadores.map(j => j.color.toLowerCase());
-  console.log('Colores usados:', coloresUsados);
-  const botones = document.querySelectorAll('.color-btn');
+  const opciones = document.querySelectorAll('#color option');
 
-  botones.forEach(btn => {
-    const colorBtn = btn.dataset.color.toLowerCase();
-    console.log(`Botón con color: ${colorBtn}, está usado: ${coloresUsados.includes(colorBtn)}`);
-    
-    if (coloresUsados.includes(colorBtn)) {
-      btn.classList.add('bloqueado');
+  opciones.forEach(op => {
+    const color = op.value.toLowerCase();
+
+    if (coloresUsados.includes(color)) {
+      op.disabled = true;   // bloquea la opción
     } else {
-      btn.classList.remove('bloqueado');
+      op.disabled = false;  // la habilita
     }
   });
 }
@@ -75,13 +72,18 @@ function agregarJugador() {
   const nombre = document.getElementById("nombreInput").value.trim();
   const color = document.getElementById("color").value;
 
-  if (!nombre) return;
-  actualizarColores();
+  if (!nombre || !color) {
+    alert("Completá nombre y color");
+    return;
+  }
+  if (!op.value) return;
   jugadores.push({ nombre, color, posicion: 0 });
 
   actualizarListaJugadores(); 
+  actualizarColores();
 
   document.getElementById("nombreInput").value = "";
+  document.getElementById("color").value = "";
 }
 
 function iniciarJuego() {
