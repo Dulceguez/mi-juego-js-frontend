@@ -101,7 +101,7 @@ function iniciarJuego() {
 }
 
 //  -------------------- DADO --------------------
- 
+let resultadoDadoActual = 0;
 tirarDadoBtn.addEventListener('click', () => {
   if (preguntaPendiente) {
     alert("Tenés que responder la pregunta primero");
@@ -126,10 +126,11 @@ tirarDadoBtn.addEventListener('click', () => {
       const resultadoFinal = Math.floor(Math.random() * 6) + 1;
       dadoImg.src = `img/dado${resultadoFinal}.png`;
 
+      resultadoDadoActual = resultadoFinal;
       actualizarFichas();
       
-      // mostrar pregunta
-
+     
+       // mostrar pregunta
       const pregunta = obtenerPregunta();
       mostrarPregunta(pregunta);
 
@@ -159,9 +160,8 @@ function mostrarPregunta(pregunta) {
 
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
-        jugadores[turnoActual].posicion; 
-        // mover jugador
-        jugadores[turnoActual].posicion += resultadoFinal;
+        
+        jugadores[turnoActual].posicion += resultadoDadoActual;
         actualizarFichas(jugadores);
         actualizarTablero();
       } else {
