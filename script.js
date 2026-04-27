@@ -37,22 +37,6 @@ function mostrarLobby() {
   document.getElementById("juegoContainer").style.display = "none";
 }
 
-function inicialSeleccionColor(nombre) {
-  const selector = document.getElementById('selectorColor');
-  const botones = document.querySelectorAll('.color-btn');
- 
-  selector.style.display = 'flex';
-
-  botones.forEach(btn => {
-       btn.addEventListener('click', () => {
-          const color = btn.dataset.color.toLowerCase();
-          
-          agregarJugador(nombre, color);
-          
-      });
-  });
-}
-
 
 function actualizarColores(){
   console.log('Jugadores:', jugadores);
@@ -92,7 +76,7 @@ function agregarJugador() {
   const color = document.getElementById("color").value;
 
   if (!nombre) return;
-
+  actualizarColores();
   jugadores.push({ nombre, color, posicion: 0 });
 
   actualizarListaJugadores(); 
