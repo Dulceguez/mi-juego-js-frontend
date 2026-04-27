@@ -85,7 +85,7 @@ function actualizarListaJugadores() {
 
 function agregarJugador(nombre, color) {
   nombre = document.getElementById("nombreInput").value.trim();
-  const color = document.getElementById("colorSelect").value;
+  color = document.getElementById("colorSelect").value;
 
   if (!nombre) return alert("Ingresá un nombre");
 
