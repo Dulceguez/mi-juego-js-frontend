@@ -28,31 +28,7 @@ function obtenerPregunta() {
 }
 
 // -------------------- JUGADORES --------------------
-window.addEventListener('DOMContentLoaded', () => {
-  const nombre = pedirNombre();
-  inicialSeleccionColor(nombre);
-});
 
-function pedirNombre() {
-  let nombre;
-
-  while (true) {
-    nombre = prompt("Ingresá tu nombre:");
-
-    if (nombre === null) {
-      alert("Tenés que ingresar un nombre");
-      continue;
-    }
-
-    nombre = nombre.trim();
-
-    if (nombre !== "") {
-      return nombre;
-    }
-
-    alert("El nombre no puede estar vacío");
-  }
-}
 
 function inicialSeleccionColor(nombre) {
   const selector = document.getElementById('selectorColor');
@@ -121,6 +97,7 @@ function iniciarJuego() {
 
   actualizarTablero();
   actualizarFichas();
+  turnoActual = 0;
 }
 
 //  -------------------- DADO --------------------
