@@ -78,20 +78,23 @@ function actualizarListaJugadores() {
 
   jugadores.forEach(j => {
     const li = document.createElement("li");
-    li.textContent = `${j.nombre} (${j.color})`;
+    li.textContent = `${j.nombre} - ${j.color}`;
+    li.style.color = j.color;
     lista.appendChild(li);
   });
 }
 
-function agregarJugador(nombre, color) {
-  nombre = document.getElementById("nombreInput").value.trim();
-  color = document.getElementById("colorSelect").value;
+function agregarJugador() {
+  const nombre = document.getElementById("nombreInput").value.trim();
+  const color = document.getElementById("color").value;
 
-  if (!nombre) return alert("Ingresá un nombre");
+  if (!nombre) return;
 
   jugadores.push({ nombre, color, posicion: 0 });
 
-  actualizarListaJugadores(); // UI del lobby
+  actualizarListaJugadores(); 
+
+  document.getElementById("nombreInput").value = "";
 }
 
 function iniciarJuego() {
