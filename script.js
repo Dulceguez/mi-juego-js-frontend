@@ -28,6 +28,9 @@ function obtenerPregunta() {
 }
 
 // -------------------- JUGADORES --------------------
+window.addEventListener("DOMContentLoaded", () => {
+  mostrarLobby();
+});
 
 function mostrarLobby() {
   document.getElementById("lobby").style.display = "block";
@@ -81,7 +84,7 @@ function actualizarListaJugadores() {
 }
 
 function agregarJugador(nombre, color) {
-  const nombre = document.getElementById("nombreInput").value.trim();
+  nombre = document.getElementById("nombreInput").value.trim();
   const color = document.getElementById("colorSelect").value;
 
   if (!nombre) return alert("Ingresá un nombre");
