@@ -126,9 +126,6 @@ tirarDadoBtn.addEventListener('click', () => {
       const resultadoFinal = Math.floor(Math.random() * 6) + 1;
       dadoImg.src = `img/dado${resultadoFinal}.png`;
 
-      // mover jugador
-      jugadores[turnoActual].posicion += resultadoFinal;
-
       actualizarFichas();
       
       // mostrar pregunta
@@ -163,6 +160,8 @@ function mostrarPregunta(pregunta) {
      if (resp.correcta) {
         alert("¡Respuesta correcta!");
         jugadores[turnoActual].posicion; 
+        // mover jugador
+        jugadores[turnoActual].posicion += resultadoFinal;
         actualizarFichas(jugadores);
         actualizarTablero();
       } else {
