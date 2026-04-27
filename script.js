@@ -44,7 +44,7 @@ function actualizarColores(){
 
   opciones.forEach(op => {
     const color = op.value.toLowerCase();
-
+    if (!op.value) return;
     if (coloresUsados.includes(color)) {
       op.disabled = true;   // bloquea la opción
     } else {
@@ -76,7 +76,7 @@ function agregarJugador() {
     alert("Completá nombre y color");
     return;
   }
-  if (!op.value) return;
+  
   jugadores.push({ nombre, color, posicion: 0 });
 
   actualizarListaJugadores(); 
