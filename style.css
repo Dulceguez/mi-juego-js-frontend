@@ -30,6 +30,10 @@ h1 {
 }
 #lobby {
   display: block;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
 }
 #juegoContainer {
   position: relative;
