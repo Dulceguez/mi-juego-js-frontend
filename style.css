@@ -94,7 +94,7 @@ button:hover {
   gap: 40px;
   overflow-x: auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: none;
   margin: 20px auto;
 }
 
