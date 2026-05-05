@@ -220,22 +220,18 @@ button:hover {
 }
 
 #preguntaContainer {
- 
-  align-self: flex-start;
-  margin-top: 0;
   display: flex;
   flex-direction: column;
   width: 280px;
   max-height: 80vh;
   overflow-y: auto;
   background-color: #1f2c38;
-  border: 3px solid rgb(0, 0, 0);
+  border: 3px solid black;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   box-sizing: border-box;
-  flex-shrink: 0; 
-  flex: 0 0 280px;
+  align-self: flex-start;
 }
 
 #preguntaContainer p {
