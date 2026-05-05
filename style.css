@@ -88,14 +88,14 @@ button:hover {
 }
 
 #juegoContainer {
+  
   display: flex;
   justify-content: center;
-  align-items: flex-start; 
+  align-items: flex-start;
   gap: 40px;
-  overflow-x: auto;
   width: 100%;
-  max-width: none;
   margin: 20px auto;
+  flex-wrap: nowrap;     
 }
 
 
