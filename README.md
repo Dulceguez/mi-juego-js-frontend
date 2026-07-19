@@ -33,7 +33,7 @@ Permite partidas de **2 a 4 jugadores en el mismo dispositivo (multijugador loca
 
 ## Demo
 
-[🎮 Jugar ahora](https://dulceguez.github.io/mi-juego-js-frontend/)
+[Jugar ahora](https://dulceguez.github.io/mi-juego-js-frontend/)
 
 ---
 
