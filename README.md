@@ -4,14 +4,14 @@ Juego de tablero tipo “preguntas y respuestas” desarrollado con **HTML, CSS 
 
 ---
 
-## 📌 Descripción
+## Descripción
 
 Los jugadores avanzan por un tablero lanzando un dado y respondiendo preguntas hasta llegar a la meta.  
 Permite partidas de **2 a 4 jugadores en el mismo dispositivo (multijugador local / hotseat)**.
 
 ---
 
-## 🚀 Tecnologías usadas
+## Tecnologías usadas
 
 - HTML5
 - CSS3
@@ -21,7 +21,7 @@ Permite partidas de **2 a 4 jugadores en el mismo dispositivo (multijugador loca
 
 ---
 
-## 🕹️ Cómo jugar (modo local / GitHub Pages)
+## Cómo jugar (modo local / GitHub Pages)
 
 1. Abrir el juego en GitHub Pages
 2. Ingresar tu nombre y elegir un color de ficha.
@@ -31,12 +31,12 @@ Permite partidas de **2 a 4 jugadores en el mismo dispositivo (multijugador loca
 
 ---
 
-## 🎯 Demo
+## Demo
 
 [🎮 Jugar ahora](https://dulceguez.github.io/mi-juego-js-frontend/)
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 Genaro Medina Castellano y Dulce Domínguez
