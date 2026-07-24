@@ -88,7 +88,6 @@ button:hover {
 }
 
 #juegoContainer {
-  
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -109,13 +108,14 @@ button:hover {
   #juegoContainer {
     justify-content: center;  
     gap: 20px;
+    flex-wrap: wrap;
     }
   
   
   #preguntaContainer {
     display: flex;
     position: relative;
-    max-height: none;
+    max-height: 80vh;
     margin-top: 20px;
     max-width: none;
     z-index: 20;
@@ -124,6 +124,13 @@ button:hover {
     flex-direction: column;
     min-height: 150px;
     align-self: flex-start;
+    overflow-y: auto;
+    background-color: #1f2c38;
+    border: 3px solid #1abc9c; /* Cambié el negro por tu color turquesa para que combine */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    box-sizing: border-box;
     }
   }
 
