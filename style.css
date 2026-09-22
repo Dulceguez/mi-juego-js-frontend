@@ -97,18 +97,15 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 25px;
-  width: 100%;
-  max-width: 1200px;
+  gap: 20px;
+  width: 95%;
+  max-width: 1050px;
   margin: 20px auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: relative;
   z-index: 10;
-  box-sizing: border-box;
-  padding: 0 15px;
 }
 
-/* Columna 1: Dado */
 #dadoContainer {
   display: flex;
   flex-direction: column;
@@ -139,7 +136,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Columna 2: Tablero */
 #tableroCompleto {
   display: flex;
   flex-direction: column;
@@ -201,11 +197,11 @@ button:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* Columna 3: Pregunta al costado */
 #preguntaContainer {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   width: 280px;
+  flex: 0 0 280px;
   max-height: 480px;
   overflow-y: auto;
   background-color: #1f2c38;
@@ -214,7 +210,7 @@ button:hover {
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   box-sizing: border-box;
-  flex: 0 0 280px;
+  align-self: flex-start;
 }
 
 #preguntaContainer p {
@@ -251,9 +247,5 @@ button:hover {
   #juegoContainer {
     flex-direction: column;
     align-items: center;
-  }
-  #preguntaContainer {
-    width: 100%;
-    max-width: 350px;
   }
 }
